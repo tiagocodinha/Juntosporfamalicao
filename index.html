@@ -6,40 +6,58 @@
     <title>Pedro Marques - Juntos por Famalicão</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .transition-height {
+            transition: height 0.3s ease;
+        }
+    </style>
 </head>
 <body>
     <div class="min-h-screen bg-white">
         <!-- Hero Section -->
         <header class="relative h-screen">
             <div class="absolute inset-0">
-                <img src="https://images.unsplash.com/photo-1447727214830-cbcbf097b52c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-                    alt="City backdrop" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-blue-900/70"></div>
+                <img src="Images/Famalicao.jpg"
+                    alt="famalicao" class="w-full h-full object-cover">
+                <div class="absolute inset-0" style="background-color: rgba(12, 108, 179, 0.7);"></div>
             </div>
 
             <nav class="relative z-10 bg-blue-900/20 backdrop-blur-sm">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex items-center justify-between h-16">
                         <div class="flex items-center">
-                            <span class="text-white font-bold text-xl">Juntos por Famalicão</span>
-                        </div>
+                            <a href="https://www.example.com" class="text-white font-bold text-xl">Juntos por Famalicão</a>                        </div>
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
-                                <a href="#about" class="text-white hover:bg-blue-800 px-3 py-2 rounded-md">Sobre</a>
-                                <a href="#achievements" class="text-white hover:bg-blue-800 px-3 py-2 rounded-md">Conquistas</a>
-                                <a href="#team" class="text-white hover:bg-blue-800 px-3 py-2 rounded-md">Equipe</a>
-                                <a href="#contact" class="text-white hover:bg-blue-800 px-3 py-2 rounded-md">Contato</a>
+                                <a href="#programa" class="text-white hover:bg-blue-800 px-3 py-2 rounded-md">Programa</a>
+                                <a href="#campanha" class="text-white hover:bg-blue-800 px-3 py-2 rounded-md">Campanha</a>
+                                <a href="#candidatos" class="text-white hover:bg-blue-800 px-3 py-2 rounded-md">Candidatos</a>
+                                <a href="#contacto" class="text-white hover:bg-blue-800 px-3 py-2 rounded-md">Contacto</a>
                             </div>
                         </div>
+                        <div class="md:hidden">
+                            <button id="menu-button" class="text-white focus:outline-none">
+                                <img src="images/hamburger.png" alt="Menu" class="w-6 h-6">
+                            </button>
+                        </div>
                     </div>
+                </div>
+                <div id="mobile-menu" class="hidden overflow-hidden transition-height md:hidden">
+                    <a href="#programa" class="block text-white hover:bg-blue-800 px-3 py-2 rounded-md">Programa</a>
+                    <a href="#campanha" class="block text-white hover:bg-blue-800 px-3 py-2 rounded-md">Campanha</a>
+                    <a href="#candidatos" class="block text-white hover:bg-blue-800 px-3 py-2 rounded-md">Candidatos</a>
+                    <a href="#contacto" class="block text-white hover:bg-blue-800 px-3 py-2 rounded-md">Contacto</a>
                 </div>
             </nav>
 
             <div class="relative z-10 flex items-center justify-center h-full">
                 <div class="text-center">
-                    <h1 class="text-5xl md:text-6xl font-bold text-white mb-4">Pedro Marques</h1>
-                    <h2 class="text-2xl md:text-3xl text-white mb-8">Juntos por Famalicão</h2>
-                    <p class="text-xl md:text-2xl text-white font-light">Unir Gerações, Criar Soluções</p>
+                    <h1 class="text-5xl md:text-6xl font-bold text-white mb-4">JUNTOS POR FAMALICÃO</h1>
+                    <h2 class="text-2xl md:text-3xl text-white mb-8">Unir Gerações, Criar Soluções</h2>
+                    <p class="text-xl md:text-2xl text-white font-light"></p>
                 </div>
             </div>
         </header>
@@ -102,13 +120,13 @@
         </section>
 
         <!-- Team Structure Section -->
-        <section id="team" class="bg-blue-50 py-16">
+        <section id="candidatos" class="bg-blue-50 py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-center mb-12">Lista Junta de Freguesia de Famalicão</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                        <div class="mb-4 relative w-32 h-32 mx-auto">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                        <div class="mb-4 relative w-32 h-32 mx-auto flex items-center justify-center">
+                            <img src="Images/PM.jpg"
                                 alt="Pedro Marques" class="w-full h-full object-cover rounded-full">
                         </div>
                         <h3 class="font-bold text-lg mb-2">Presidente</h3>
@@ -116,38 +134,38 @@
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-md text-center">
                         <div class="mb-4 relative w-32 h-32 mx-auto">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                                alt="Ana Silva" class="w-full h-full object-cover rounded-full">
+                            <img src=""
+                                alt="" class="w-full h-full object-cover rounded-full">
                         </div>
                         <h3 class="font-bold text-lg mb-2">Vice-Presidente</h3>
-                        <p class="text-gray-600">Ana Silva</p>
+                        <p class="text-gray-600">x</p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-md text-center">
                         <div class="mb-4 relative w-32 h-32 mx-auto">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                                alt="João Costa" class="w-full h-full object-cover rounded-full">
+                            <img src=""
+                                alt="" class="w-full h-full object-cover rounded-full">
                         </div>
                         <h3 class="font-bold text-lg mb-2">Secretário</h3>
-                        <p class="text-gray-600">João Costa</p>
+                        <p class="text-gray-600">x</p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-md text-center">
                         <div class="mb-4 relative w-32 h-32 mx-auto">
-                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                                alt="Maria Santos" class="w-full h-full object-cover rounded-full">
+                            <img src=""
+                                alt="" class="w-full h-full object-cover rounded-full">
                         </div>
                         <h3 class="font-bold text-lg mb-2">Tesoureiro</h3>
-                        <p class="text-gray-600">Maria Santos</p>
+                        <p class="text-gray-600">x</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer id="contact" class="bg-blue-900 text-white py-12">
+        <footer id="contacto" style="background-color: rgba(12, 108, 179, 0.7);" class="text-white py-12">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid md:grid-cols-2 gap-8">
                     <div>
-                        <h3 class="text-xl font-bold mb-4">Contato</h3>
+                        <h3 class="text-xl font-bold mb-4">Contacto</h3>
                         <div class="space-y-2">
                             <p class="flex items-center">
                                 <i icon-name="mail" class="mr-2"></i>
@@ -178,7 +196,7 @@
                     </div>
                 </div>
                 <div class="mt-8 pt-8 border-t border-blue-800 text-center">
-                    <p>&copy; 2024 Pedro Marques - Juntos por Famalicão. Todos os direitos reservados.</p>
+                    <p>&copy; 2025 Juntos por Famalicão.</p>
                 </div>
             </div>
         </footer>
@@ -198,6 +216,31 @@
                 alert('Obrigado por se inscrever!');
                 this.reset();
             }
+        });
+
+        // Toggle mobile menu
+        document.getElementById('menu-button').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                menu.style.height = menu.scrollHeight + 'px';
+            } else {
+                menu.style.height = '0';
+                menu.addEventListener('transitionend', function() {
+                    menu.classList.add('hidden');
+                }, { once: true });
+            }
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                var menu = document.getElementById('mobile-menu');
+                menu.style.height = '0';
+                menu.addEventListener('transitionend', function() {
+                    menu.classList.add('hidden');
+                }, { once: true });
+            });
         });
     </script>
 </body>
