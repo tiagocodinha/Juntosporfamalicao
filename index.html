@@ -7,8 +7,23 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide"></script>
     <link rel="stylesheet" href="style/style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuLinks = document.querySelectorAll('#mobile-menu a');
 
+            menuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
 
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="min-h-screen bg-white">
@@ -20,11 +35,14 @@
                 <div class="absolute inset-0" style="background-color: rgba(12, 108, 179, 0.7);"></div>
             </div>
 
-            <nav class="relative z-10 bg-blue-900/20 backdrop-blur-sm">
+            <nav class="relative z-10 bg-blue-900/20 backdrop-blur-sm md:fixed md:top-0 md:left-0 md:w-full">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex items-center justify-between h-16">
                         <div class="flex items-center">
-                            <a href="https://www.example.com" class="text-white font-bold text-xl">Juntos por Famalicão</a>                        </div>
+                            <a href="https://www.example.com">
+                                <img src="images/juntosporfamalicao.svg" alt="Juntos por Famalicão" class="h-12">
+                            </a>
+                        </div>
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
                                 <a href="#programa" class="text-white hover:bg-blue-800 px-3 py-2 rounded-md">Programa</a>
@@ -40,7 +58,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="mobile-menu" class="hidden overflow-hidden transition-height md:hidden">
+                <div id="mobile-menu" class="hidden md:hidden">
                     <a href="#programa" class="block text-white hover:bg-blue-800 px-3 py-2 rounded-md">Programa</a>
                     <a href="#campanha" class="block text-white hover:bg-blue-800 px-3 py-2 rounded-md">Campanha</a>
                     <a href="#candidatos" class="block text-white hover:bg-blue-800 px-3 py-2 rounded-md">Candidatos</a>
