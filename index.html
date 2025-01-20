@@ -42,36 +42,6 @@
         .card-zoom:hover {
             transform: scale(1.05);
         }
-
-        .navbar {
-            transition: all 0.3s ease;
-        }
-
-        .navbar-hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .navbar-fixed {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(12, 108, 179, 0.7);
-            z-index: 1000;
-        }
-
-        .navbar-center {
-            justify-content: center;
-        }
-
-        .navbar-left {
-            justify-content: flex-start;
-        }
-
-        .navbar-right {
-            justify-content: flex-end;
-        }
     </style>
 </head>
 <body>
@@ -79,22 +49,22 @@
         <!-- Hero Section -->
         <header class="relative h-screen">
             <div class="absolute inset-0">
-                <img src="Images/Famalicao.jpg" alt="famalicao" class="w-full h-full object-cover">
+                <img src="Images/Famalicao.jpg"
+                    alt="famalicao" class="w-full h-full object-cover">
                 <div class="absolute inset-0" style="background-color: rgba(12, 108, 179, 0.7);"></div>
             </div>
 
-            <nav id="navbar" class="relative z-10 bg-blue-900/20 backdrop-blur-sm navbar">
+            <nav class="relative z-10 bg-blue-900/20 backdrop-blur-sm">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div id="navbar-content" class="flex items-center justify-center h-16">
-                        <div id="navbar-left" class="flex items-center navbar-hidden">
-                            <a href="https://www.example.com" class="text-white font-bold text-xl">Juntos por Famalicão</a>
-                        </div>
+                    <div class="flex items-center justify-between h-16">
+                        <div class="flex items-center">
+                            <a href="https://www.example.com" class="text-white font-bold text-xl">Juntos por Famalicão</a>                        </div>
                         <div class="hidden md:block">
-                            <div id="navbar-center" class="ml-10 flex items-baseline space-x-4">
+                            <div class="ml-10 flex items-baseline space-x-4">
                                 <a href="#programa" class="text-white hover:bg-blue-800 px-3 py-2 rounded-md">Programa</a>
                                 <a href="#campanha" class="text-white hover:bg-blue-800 px-3 py-2 rounded-md">Campanha</a>
                                 <a href="#candidatos" class="text-white hover:bg-blue-800 px-3 py-2 rounded-md">Candidatos</a>
-                                <a href="#contactos" class="text-white hover:bg-blue-800 px-3 py-2 rounded-md">Contactos</a>
+                                <a href="#contacto" class="text-white hover:bg-blue-800 px-3 py-2 rounded-md">Contacto</a>
                             </div>
                         </div>
                         <div class="md:hidden">
@@ -108,7 +78,7 @@
                     <a href="#programa" class="block text-white hover:bg-blue-800 px-3 py-2 rounded-md">Programa</a>
                     <a href="#campanha" class="block text-white hover:bg-blue-800 px-3 py-2 rounded-md">Campanha</a>
                     <a href="#candidatos" class="block text-white hover:bg-blue-800 px-3 py-2 rounded-md">Candidatos</a>
-                    <a href="#contactos" class="block text-white hover:bg-blue-800 px-3 py-2 rounded-md">Contactos</a>
+                    <a href="#contacto" class="block text-white hover:bg-blue-800 px-3 py-2 rounded-md">Contacto</a>
                 </div>
             </nav>
 
@@ -215,7 +185,7 @@
             </section>
 
         <!-- Footer -->
-        <footer id="Contactos" style="background-color: rgba(12, 108, 179, 0.7);" class="text-white py-12">
+        <footer id="contacto" style="background-color: rgba(12, 108, 179, 0.7);" class="text-white py-12">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid md:grid-cols-2 gap-8">
                     <div>
@@ -286,29 +256,23 @@
                 console.error(error);
             });
         }
+    </script>
+    
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
 
-        // Função para manipular a navbar durante o scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            const navbarContent = document.getElementById('navbar-content');
-            const navbarLeft = document.getElementById('navbar-left');
-            const navbarCenter = document.getElementById('navbar-center');
+        // Newsletter form submission
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const agreed = document.getElementById('agree').checked;
 
-            if (window.scrollY > 0) {
-                navbar.classList.add('navbar-fixed');
-                navbarLeft.classList.remove('navbar-hidden');
-                navbarContent.classList.remove('justify-center');
-                navbarContent.classList.add('justify-between');
-            } else {
-                navbar.classList.remove('navbar-fixed');
-                navbarLeft.classList.add('navbar-hidden');
-                navbarContent.classList.remove('justify-between');
-                navbarContent.classList.add('justify-center');
+            if (email && agreed) {
+                alert('Obrigado por se inscrever!');
+                this.reset();
             }
         });
-
-        // Inicializar Lucide icons
-        lucide.createIcons();
 
         // Toggle mobile menu
         document.getElementById('menu-button').addEventListener('click', function() {
