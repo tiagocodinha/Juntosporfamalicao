@@ -10,6 +10,25 @@
 
     
     <script>
+
+        document.addEventListener('scroll', function() {
+            const heroText = document.getElementById('hero-text');
+            const navbarLogo = document.getElementById('navbar-logo');
+            const scrollPosition = window.scrollY;
+
+            if (scrollPosition > 100) {
+                heroText.classList.add('fade-out-hero');
+                heroText.classList.remove('fade-in-hero');
+                navbarLogo.classList.add('fade-in-logo');
+                navbarLogo.classList.remove('fade-out-logo');
+            } else {
+                heroText.classList.add('fade-in-hero');
+                heroText.classList.remove('fade-out-hero');
+                navbarLogo.classList.add('fade-out-logo');
+                navbarLogo.classList.remove('fade-in-logo');
+            }
+        });
+
         document.addEventListener('DOMContentLoaded', function () {
             const menuButton = document.getElementById('menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -53,7 +72,7 @@
                     <div class="flex items-center justify-between h-16">
                         <div class="flex items-center">
                             <a href="https://www.example.com">
-                                <img id="navbar-logo" src="images/juntosporfamalicao.svg" alt="Juntos por Famalicão" class="h-12 fade hidden">
+                                <img id=navbar-logo src="images/juntosporfamalicao.svg" alt="Juntos por Famalicão" class="h-12 fade hidden">
                             </a>
                         </div>
                         <div class="hidden md:block">

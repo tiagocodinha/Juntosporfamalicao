@@ -33,3 +33,22 @@ h1, h2 {
 .card-zoom:hover {
     transform: scale(1.05);
 }
+
+.fade-in-logo {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+}
+
+.fade-out-logo {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.fade-in-hero {
+    opacity: 1;
+    transition: opacity 2s ease-in;
+}
+
+.fade-out-hero {
+    opacity: 0;
+    transition: opacity 2s ease-out;
